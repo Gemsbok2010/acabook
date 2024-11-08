@@ -15,7 +15,7 @@ const SecuritySettings = () => {
   // ================= PUT ===================
   const onSubmit = (e) => {
     e.preventDefault();
-    setIsloading(false);
+    setIsloading(true);
     try {
       fetch(
         process.env.REACT_APP_BACKEND_URL +
@@ -35,11 +35,11 @@ const SecuritySettings = () => {
         .then((data) => {
           if (data.invalid) {
             outPutErrorMessagesInSecuritySettings(data.invalid);
-            setIsloading(true);
+            setIsloading(false);
           }
           if (data.user) {
             outPutSuccessMessageInSecuritySettings(data.user);
-            setIsloading(true);
+            setIsloading(false);
           }
         });
     } catch (err) {
@@ -201,7 +201,7 @@ const SecuritySettings = () => {
                           <button className="btn-vori">
                             <ThreeDots
                               type="ThreeDots"
-                              height={40}
+                              height={30}
                               width={80}
                               color={"white"}
                             />
