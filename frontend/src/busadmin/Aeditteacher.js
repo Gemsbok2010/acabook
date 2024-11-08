@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import $ from "jquery";
 import { ExternalLink } from "react-external-link";
 import axios from "axios";
-import { RotatingLines } from "react-loader-spinner";
 
 import {
   GoogleMap,
@@ -449,35 +448,37 @@ const Aeditteacher = () => {
     return (
       <div
         style={{
-          backgroundColor: "rgba(33, 40, 46, 0.8)",
+          backgroundColor: "#121313",
           top: "0",
           left: "0",
           height: "100%",
           width: "100%",
           zIndex: "2500",
-          justifyContent: "center",
-          alignItems: "center",
           display: "block",
           position: "fixed",
-          color: "white",
         }}
       >
         <div
           style={{
             textAlign: "center",
             position: "absolute",
-            transform: "translate(50%,50%)",
+            display: "block",
+            height: "100%",
+            width: "100%",
+            top: "90%",
+            left: "50%",
+            transform: "translate(-50%,-50%)",
           }}
         >
-          <RotatingLines
-            strokeColor="white"
-            strokeWidth="5"
-            animationDuration="0.75"
-            width="76"
-            visible={true}
+          <img
+            style={{
+              animation: "loadingframe 1000ms infinite",
+              animationDirection: "alternate-reverse",
+            }}
+            src="/images/logo-footer.png"
+            width="80px"
+            alt=""
           />
-          {"  "}
-          請稍待...
         </div>
       </div>
     );

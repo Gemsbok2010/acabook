@@ -10,7 +10,6 @@ import { login } from "../redux/userInfo";
 
 // Three dots
 import { ThreeDots } from "react-loader-spinner";
-import { RotatingLines } from "react-loader-spinner";
 
 const Dashboard = () => {
   const dispatch = useDispatch();
@@ -270,12 +269,14 @@ const Dashboard = () => {
             transform: "translate(-50%,-50%)",
           }}
         >
-          <RotatingLines
-            strokeColor="white"
-            strokeWidth="4"
-            animationDuration="1.25"
-            width="100"
-            visible={true}
+          <img
+            style={{
+              animation: "loadingframe 1000ms infinite",
+              animationDirection: "alternate-reverse",
+            }}
+            src="/images/logo-footer.png"
+            width="80px"
+            alt=""
           />
         </div>
       </div>

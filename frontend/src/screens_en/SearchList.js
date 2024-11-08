@@ -295,7 +295,7 @@ const SearchList = () => {
       axios
         .get(
           process.env.REACT_APP_BACKEND_URL +
-            +"api/intlapplications/applied?nanoId=" +
+            "api/intlapplications/applied?nanoId=" +
             localStorage.getItem("nanoId")
         )
         .then((response) => {
@@ -404,7 +404,7 @@ const SearchList = () => {
     if (ascDesc === false) {
       const res = await fetch(
         process.env.REACT_APP_BACKEND_URL +
-          +"api/intllistings/search?sortBy=asc" +
+          "api/intllistings/search?sortBy=asc" +
           "&contract=" +
           contract +
           "&subjects=" +
@@ -426,7 +426,7 @@ const SearchList = () => {
     if (ascDesc === true) {
       const res = await fetch(
         process.env.REACT_APP_BACKEND_URL +
-          +"api/intllistings/search?sortBy=desc" +
+          "api/intllistings/search?sortBy=desc" +
           "&contract=" +
           contract +
           "&subjects=" +

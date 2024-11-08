@@ -10243,3 +10243,15 @@ footer a:hover img {
     height: 60px;
   }
 }
+
+/* LOADING PAGE */
+@keyframes loadingframe {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(2);
+  }
+}

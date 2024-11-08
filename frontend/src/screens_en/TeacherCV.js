@@ -5,7 +5,6 @@ import LoggedInNavbar from "../components_en/LoggedInNavbar";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import $ from "jquery";
-import { RotatingLines } from "react-loader-spinner";
 import { ThreeDots } from "react-loader-spinner";
 import { ExternalLink } from "react-external-link";
 import { useSelector } from "react-redux";
@@ -430,12 +429,14 @@ const TeacherCV = () => {
             transform: "translate(-50%,-50%)",
           }}
         >
-          <RotatingLines
-            strokeColor="white"
-            strokeWidth="4"
-            animationDuration="1.25"
-            width="100"
-            visible={true}
+          <img
+            style={{
+              animation: "loadingframe 1000ms infinite",
+              animationDirection: "alternate-reverse",
+            }}
+            src="/images/logo-footer.png"
+            width="80px"
+            alt=""
           />
         </div>
       </div>

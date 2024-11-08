@@ -7,7 +7,6 @@ import { ExternalLink } from "react-external-link";
 import { useSelector } from "react-redux";
 import { ReactSession } from "react-client-session";
 import axios from "axios";
-import { RotatingLines } from "react-loader-spinner";
 import { ThreeDots } from "react-loader-spinner";
 
 const TeacherSubjects = () => {
@@ -331,12 +330,14 @@ const TeacherSubjects = () => {
             transform: "translate(-50%,-50%)",
           }}
         >
-          <RotatingLines
-            strokeColor="white"
-            strokeWidth="4"
-            animationDuration="1.25"
-            width="100"
-            visible={true}
+          <img
+            style={{
+              animation: "loadingframe 1000ms infinite",
+              animationDirection: "alternate-reverse",
+            }}
+            src="/images/logo-footer.png"
+            width="80px"
+            alt=""
           />
         </div>
       </div>

@@ -61,7 +61,7 @@ const Resume = () => {
     const fetchData = async () => {
       const res = await fetch(
         process.env.REACT_APP_BACKEND_URL +
-          +"api/courses/resume?nanoId=" +
+          "api/courses/resume?nanoId=" +
           nanoId
       );
       const data = await res.json();

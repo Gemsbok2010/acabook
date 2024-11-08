@@ -20,7 +20,6 @@ import {
   Autocomplete,
 } from "@react-google-maps/api";
 
-import { RotatingLines } from "react-loader-spinner";
 import { login } from "../redux/userInfo";
 
 function Map({ address, latitude, longitude, geoLocate }) {
@@ -663,12 +662,14 @@ const PersonalDetails = () => {
             transform: "translate(-50%,-50%)",
           }}
         >
-          <RotatingLines
-            strokeColor="white"
-            strokeWidth="4"
-            animationDuration="1.25"
-            width="100"
-            visible={true}
+          <img
+            style={{
+              animation: "loadingframe 1000ms infinite",
+              animationDirection: "alternate-reverse",
+            }}
+            src="/images/logo-footer.png"
+            width="80px"
+            alt=""
           />
         </div>
       </div>
