@@ -24,7 +24,9 @@ const Aresume = () => {
     // ============ PROFILE DATA ===========
     axios
       .get(
-        process.env.BACKEND_URL + "api/admin/profile/" + pathname.split("/")[2]
+        process.env.REACT_APP_BACKEND_URL +
+          "api/admin/profile/" +
+          pathname.split("/")[2]
       )
       .then((response) => {
         if (response.status === 200) {

@@ -260,7 +260,7 @@ const SearchList = () => {
     if (id) {
       axios
         .get(
-          process.env.BACKEND_URL +
+          process.env.REACT_APP_BACKEND_URL +
             "api/users/allusers/" +
             localStorage.getItem("userId")
         )
@@ -295,7 +295,7 @@ const SearchList = () => {
     if (user.isLoggedIn) {
       axios
         .get(
-          process.env.BACKEND_URL +
+          process.env.REACT_APP_BACKEND_URL +
             "api/applications/applied?nanoId=" +
             localStorage.getItem("nanoId")
         )
@@ -311,7 +311,7 @@ const SearchList = () => {
 
   const pagePrevious = async () => {
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/listings/search?page=${page <= 0 ? 0 : page - 1}` +
         "&sortBy=" +
         sort +
@@ -338,7 +338,7 @@ const SearchList = () => {
 
   const pageNext = async () => {
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/listings/search?page=${
           page < maxPage ? 1 + parseInt(page) : page
         }` +
@@ -373,7 +373,7 @@ const SearchList = () => {
 
   const IntermediateButtons = async (id) => {
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/listings/search?page=${id + 1}` +
         "&contract=" +
         contract +
@@ -404,7 +404,7 @@ const SearchList = () => {
   const sorting = async (ascDesc) => {
     if (ascDesc === false) {
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/listings/search?sortBy=asc" +
           "&contract=" +
           contract +
@@ -426,7 +426,7 @@ const SearchList = () => {
 
     if (ascDesc === true) {
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/listings/search?sortBy=desc" +
           "&contract=" +
           contract +
@@ -565,7 +565,7 @@ const SearchList = () => {
     // declare the data fetching function
     const fetchData = async () => {
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/listings/search?" +
           "contract=" +
           contract +
@@ -1489,7 +1489,7 @@ const SearchList = () => {
                           <div className="ads" key={listing._id}>
                             <ExternalLink
                               href={
-                                process.env.BACKEND_URL +
+                                process.env.REACT_APP_BACKEND_URL +
                                 `api/listings/adPosts/${listing.slug}`
                               }
                               target="_self"

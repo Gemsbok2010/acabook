@@ -142,7 +142,7 @@ const Aeditteacher = () => {
     const fetchData = async () => {
       axios
         .get(
-          process.env.BACKEND_URL +
+          process.env.REACT_APP_BACKEND_URL +
             "api/admin/profile/" +
             pathname.split("/")[2]
         )
@@ -184,7 +184,7 @@ const Aeditteacher = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    fetch(process.env.BACKEND_URL + "api/teachers/updateProfile", {
+    fetch(process.env.REACT_APP_BACKEND_URL + "api/teachers/updateProfile", {
       method: "PUT",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify({
@@ -275,9 +275,12 @@ const Aeditteacher = () => {
 
   // =========== DELETE PHOTO ==================
   const deletePhoto = async (id) => {
-    await fetch(process.env.BACKEND_URL + "api/teachers/allusers/" + id, {
-      method: "DELETE",
-    }).then((res) => {
+    await fetch(
+      process.env.REACT_APP_BACKEND_URL + "api/teachers/allusers/" + id,
+      {
+        method: "DELETE",
+      }
+    ).then((res) => {
       if (res.ok === true) {
         setIdPhoto("");
       }
@@ -514,7 +517,7 @@ const Aeditteacher = () => {
                 <div>
                   <ExternalLink
                     href={
-                      process.env.BACKEND_URL +
+                      process.env.REACT_APP_BACKEND_URL +
                       `api/admin/resume/${userInfo.teacherId}`
                     }
                     target="_blank"
@@ -528,7 +531,7 @@ const Aeditteacher = () => {
               <form
                 id="formZero"
                 action={
-                  process.env.BACKEND_URL +
+                  process.env.REACT_APP_BACKEND_URL +
                   `api/teachers/adminUpload?email=${userInfo.email}`
                 }
                 method="POST"

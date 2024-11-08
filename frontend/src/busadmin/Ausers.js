@@ -24,7 +24,7 @@ const Ausers = () => {
 
   const pagePrevious = async () => {
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/admin/allusers?page=${page <= 0 ? 0 : page - 1}` +
         "&sortBy=" +
         sort +
@@ -46,7 +46,7 @@ const Ausers = () => {
 
   const pageNext = async () => {
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/admin/allusers?page=${
           page < maxPage ? 1 + parseInt(page) : page
         }` +
@@ -76,7 +76,7 @@ const Ausers = () => {
 
   const IntermediateButtons = async (id) => {
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/admin/allusers?page=${id + 1}` +
         "&location=" +
         location +
@@ -104,7 +104,7 @@ const Ausers = () => {
     setReload(false);
     if (ascDesc === false) {
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/admin/allusers?sortBy=asc" +
           "&location=" +
           location +
@@ -123,7 +123,7 @@ const Ausers = () => {
     if (ascDesc === true) {
       setReload(false);
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/admin/allusers?sortBy=desc" +
           "&location=" +
           location +
@@ -216,7 +216,7 @@ const Ausers = () => {
     const fetchData = async () => {
       setReload(false);
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/admin/allusers?" +
           "location=" +
           location +
@@ -278,7 +278,7 @@ const Ausers = () => {
 
     setBackdrop(true);
     const res = await fetch(
-      process.env.BACKEND_URL + `api/admin/makeAdmin/${id}` + "?sortBy=" + sort,
+     process.env.REACT_APP_BACKEND_URL +`api/admin/makeAdmin/${id}` + "?sortBy=" + sort,
       {
         method: "PUT",
         credentials: "include",
@@ -301,7 +301,7 @@ const Ausers = () => {
     e.preventDefault();
     setBackdrop(true);
     const res = await fetch(
-      process.env.BACKEND_URL + `api/admin/makeAdmin/${id}` + "?sortBy=" + sort,
+      process.env.REACT_APP_BACKEND_URL + `api/admin/makeAdmin/${id}` + "?sortBy=" + sort,
       {
         method: "PUT",
         credentials: "include",
@@ -326,7 +326,7 @@ const Ausers = () => {
     e.preventDefault();
     setBackdrop(true);
     const res = await fetch(
-      process.env.BACKEND_URL + `api/admin/blackme/${id}` + "?sortBy=" + sort,
+      process.env.REACT_APP_BACKEND_URL + `api/admin/blackme/${id}` + "?sortBy=" + sort,
       {
         method: "PUT",
         credentials: "include",
@@ -361,7 +361,7 @@ const Ausers = () => {
     e.preventDefault();
     setBackdrop(true);
     const res = await fetch(
-      process.env.BACKEND_URL + `api/admin/blackme/${id}` + "?sortBy=" + sort,
+      process.env.REACT_APP_BACKEND_URL + `api/admin/blackme/${id}` + "?sortBy=" + sort,
       {
         method: "PUT",
         credentials: "include",
@@ -404,7 +404,7 @@ const Ausers = () => {
     const fetchData = async () => {
       setReload(false);
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/admin/allusers?" +
           "location=" +
           location +
@@ -1223,7 +1223,7 @@ const Ausers = () => {
                           <div>
                             <ExternalLink
                               href={
-                                process.env.BACKEND_URL +
+                                process.env.REACT_APP_BACKEND_URL +
                                 `api/admin/users/${user._id}`
                               }
                               target="_blank"

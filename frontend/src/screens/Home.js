@@ -22,7 +22,7 @@ const Home = () => {
   const fetchData = async () => {
     setIsloaded(false);
     axios
-      .get(process.env.BACKEND_URL + "api/admin/homepage")
+      .get(process.env.REACT_APP_BACKEND_URL + "api/admin/homepage")
       .then((response) => {
         if (response.status === 200) {
           setTeacherNo(response.data.total);

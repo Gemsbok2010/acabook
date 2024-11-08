@@ -12,7 +12,7 @@ const Asecurity = () => {
     e.preventDefault();
     try {
       fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/secure/securitySettings/" +
           localStorage.getItem("userId"),
         {

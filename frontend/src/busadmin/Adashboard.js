@@ -48,7 +48,7 @@ const Adashboard = () => {
     // declare the data fetching function
     const fetchData = async () => {
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/admin/dashboard/" +
           localStorage.getItem("username")
       );

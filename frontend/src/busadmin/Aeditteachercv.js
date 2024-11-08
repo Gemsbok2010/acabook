@@ -290,7 +290,9 @@ const Aeditteachercv = () => {
     // ============ PROFILE DATA ===========
     axios
       .get(
-        process.env.BACKEND_URL + "api/admin/profile/" + pathname.split("/")[2]
+        process.env.REACT_APP_BACKEND_URL +
+          "api/admin/profile/" +
+          pathname.split("/")[2]
       )
       .then((response) => {
         if (response.status === 200) {
@@ -432,7 +434,7 @@ const Aeditteachercv = () => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    fetch(process.env.BACKEND_URL + "api/teachers/updateCv", {
+    fetch(process.env.REACT_APP_BACKEND_URL + "api/teachers/updateCv", {
       method: "PUT",
       credentials: "include",
       headers: { "Content-type": "application/json" },
@@ -577,7 +579,7 @@ const Aeditteachercv = () => {
                 <div>
                   <ExternalLink
                     href={
-                      process.env.BACKEND_URL +
+                      process.env.REACT_APP_BACKEND_URL +
                       `api/admin/resume/${userInfo.teacherId}`
                     }
                     target="_blank"

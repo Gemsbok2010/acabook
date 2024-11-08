@@ -54,7 +54,9 @@ const Ad_details = () => {
     setIsshow(false);
     // ============ LISTINGS DATA ===========
     axios
-      .get(process.env.BACKEND_URL + "api/listings/Ad_details/" + slug)
+      .get(
+        process.env.REACT_APP_BACKEND_URL + "api/listings/Ad_details/" + slug
+      )
       .then((response) => {
         if (response.status === 200) {
           setList(response.data);
@@ -95,7 +97,11 @@ const Ad_details = () => {
   // ============ PROFILE DATA ===========
   useEffect(() => {
     axios
-      .get(process.env.BACKEND_URL + "api/teachers/candidate/" + user.nanoId)
+      .get(
+        process.env.REACT_APP_BACKEND_URL +
+          "api/teachers/candidate/" +
+          user.nanoId
+      )
       .then((response) => {
         if (response.status === 200) {
           setCountry(response.data.country);
@@ -150,7 +156,7 @@ const Ad_details = () => {
     const firstName = user.firstName;
     const lastName = user.lastName;
     const nanoId = user.nanoId;
-    fetch(process.env.BACKEND_URL + "api/applications/applications", {
+    fetch(process.env.REACT_APP_BACKEND_URL + "api/applications/applications", {
       method: "POST",
       credentials: "include",
       headers: { "Content-type": "application/json" },
@@ -217,7 +223,7 @@ const Ad_details = () => {
   useEffect(() => {
     axios
       .get(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           `api/applications/Ad_details/${slug}?nanoId=` +
           localStorage.getItem("nanoId")
       )

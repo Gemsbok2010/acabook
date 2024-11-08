@@ -57,7 +57,7 @@ const ListingManager = () => {
 
   const pageNext = async () => {
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/listings/listingmanager?page=${
           page < maxPage ? 1 + parseInt(page) : page
         }` +
@@ -93,7 +93,7 @@ const ListingManager = () => {
 
   const IntermediateButtons = async (id) => {
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/listings/listingmanager?page=${id + 1}` +
         "&contract=" +
         contract +
@@ -129,7 +129,7 @@ const ListingManager = () => {
     setReload(false);
     if (ascDesc === false) {
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/listings/listingmanager?sortBy=asc" +
           "&contract=" +
           contract +
@@ -158,7 +158,7 @@ const ListingManager = () => {
     if (ascDesc === true) {
       setReload(false);
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/listings/listingmanager?sortBy=desc" +
           "&contract=" +
           contract +
@@ -335,7 +335,7 @@ const ListingManager = () => {
     ReactSession.set("slug", slug);
     setReload(false);
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/listings/candidates?sortBy=` +
         sort +
         "&contract=" +
@@ -367,7 +367,7 @@ const ListingManager = () => {
     e.preventDefault();
     setBackdrop(true);
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/listings/sleepAd/${slug}/?sortBy=` +
         sort +
         "&page=" +
@@ -394,7 +394,7 @@ const ListingManager = () => {
     e.preventDefault();
     setBackdrop(true);
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/listings/sleepAd/${slug}/?sortBy=` +
         sort +
         "&page=" +
@@ -421,7 +421,7 @@ const ListingManager = () => {
     e.preventDefault();
 
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/listings/reject/${slugId}/${nanoId}?sortBy=` +
         sort +
         "&page=" +
@@ -1083,7 +1083,7 @@ const ListingManager = () => {
                         <div className="leftmessage">
                           <ExternalLink
                             href={
-                              process.env.BACKEND_URL +
+                              process.env.REACT_APP_BACKEND_URL +
                               `api/listings/edit/${listing.slug}`
                             }
                           >
@@ -1092,7 +1092,7 @@ const ListingManager = () => {
 
                           <ExternalLink
                             href={
-                              process.env.BACKEND_URL +
+                              process.env.REACT_APP_BACKEND_URL +
                               `api/listings/adPosts/${listing.slug}`
                             }
                             target="_blank"
@@ -1270,7 +1270,7 @@ const ListingManager = () => {
                             <ExternalLink
                               target="_blank"
                               href={
-                                process.env.BACKEND_URL +
+                                process.env.REACT_APP_BACKEND_URL +
                                 `api/teachers/resumeCandidate/${candidate.nanoId}/${candidate.slugId}`
                               }
                             >

@@ -61,7 +61,11 @@ const Ad_details = () => {
     setIsshow(false);
     // ============ LISTINGS DATA ===========
     axios
-      .get(process.env.BACKEND_URL + "api/intllistings/Ad_details/" + slug)
+      .get(
+        process.env.REACT_APP_BACKEND_URL +
+          "api/intllistings/Ad_details/" +
+          slug
+      )
       .then((response) => {
         if (response.status === 200) {
           setList(response.data);
@@ -104,7 +108,7 @@ const Ad_details = () => {
 
     axios
       .get(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/intlteachers/candidate/" +
           localStorage.getItem("nanoId")
       )
@@ -162,35 +166,38 @@ const Ad_details = () => {
     const firstName = user.firstName;
     const lastName = user.lastName;
     const nanoId = localStorage.getItem("nanoId");
-    fetch(process.env.BACKEND_URL + "api/intlapplications/applications", {
-      method: "POST",
-      credentials: "include",
-      headers: { "Content-type": "application/json" },
-      body: JSON.stringify({
-        firstName: firstName,
-        lastName: lastName,
-        nanoId: nanoId,
-        email: email,
-        yourpay: yourpay,
-        hometutor: hometutor,
-        onlinetutor: onlinetutor,
-        slugId: list.slug,
-        caseId: list.caseId,
-        isTeacher: user.isTeacher,
-        photo: idPhoto,
-        phone: phone,
-        startDate: list.startDate,
-        finishDate: list.finishDate,
-        latitude: latitude,
-        longitude: longitude,
-        streetNo: streetNo,
-        street: street,
-        suburb: suburb,
-        state: state,
-        city: city,
-        country: country,
-      }),
-    })
+    fetch(
+      process.env.REACT_APP_BACKEND_URL + "api/intlapplications/applications",
+      {
+        method: "POST",
+        credentials: "include",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify({
+          firstName: firstName,
+          lastName: lastName,
+          nanoId: nanoId,
+          email: email,
+          yourpay: yourpay,
+          hometutor: hometutor,
+          onlinetutor: onlinetutor,
+          slugId: list.slug,
+          caseId: list.caseId,
+          isTeacher: user.isTeacher,
+          photo: idPhoto,
+          phone: phone,
+          startDate: list.startDate,
+          finishDate: list.finishDate,
+          latitude: latitude,
+          longitude: longitude,
+          streetNo: streetNo,
+          street: street,
+          suburb: suburb,
+          state: state,
+          city: city,
+          country: country,
+        }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.invalid) {
@@ -229,7 +236,7 @@ const Ad_details = () => {
   useEffect(() => {
     axios
       .get(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           `api/intlapplications/Ad_details/${slug}?nanoId=` +
           localStorage.getItem("nanoId")
       )

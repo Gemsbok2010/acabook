@@ -37,7 +37,7 @@ const Navbar = () => {
     if (id) {
       localStorage.setItem("userId", id);
       localStorage.setItem("token", token);
-       window.history.pushState({}, document.title, +"/en");
+      window.history.pushState({}, document.title, +"/en");
     }
 
     // ============ PROFILE DATA ===========

@@ -25,7 +25,7 @@ const TeacherSubjects = () => {
 
   const pagePrevious = async () => {
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/courses/search?page=${page <= 0 ? 0 : page - 1}` +
         "&sortBy=" +
         sort +
@@ -49,7 +49,7 @@ const TeacherSubjects = () => {
 
   const pageNext = async () => {
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/courses/search?page=${
           page < maxPage ? 1 + parseInt(page) : page
         }` +
@@ -82,7 +82,7 @@ const TeacherSubjects = () => {
 
   const IntermediateButtons = async (id) => {
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/courses/search?page=${id + 1}` +
         "&sortBy=" +
         sort +
@@ -177,7 +177,9 @@ const TeacherSubjects = () => {
     // declare the data fetching function
     const fetchData = async () => {
       const res = await fetch(
-        process.env.BACKEND_URL + "api/courses/search?nanoId=" + user.nanoId
+        process.env.REACT_APP_BACKEND_URL +
+          "api/courses/search?nanoId=" +
+          user.nanoId
       );
       const data = await res.json();
 
@@ -208,7 +210,9 @@ const TeacherSubjects = () => {
     // declare the data fetching function
     const fetchData = async () => {
       const res = await fetch(
-        process.env.BACKEND_URL + "api/courses/search?nanoId=" + user.nanoId
+        process.env.REACT_APP_BACKEND_URL +
+          "api/courses/search?nanoId=" +
+          user.nanoId
       );
       const data = await res.json();
 
@@ -288,7 +292,7 @@ const TeacherSubjects = () => {
 
     setBackdrop(true);
     const res = await fetch(
-      process.env.BACKEND_URL + `api/courses/deleteSubject/${id}?`,
+      process.env.REACT_APP_BACKEND_URL + `api/courses/deleteSubject/${id}?`,
       {
         method: "DELETE",
       }

@@ -11,7 +11,7 @@ const ForgotPassword = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    fetch(process.env.BACKEND_URL + "api/intlsecure/forgotpassword", {
+    fetch(process.env.REACT_APP_BACKEND_URL + "api/intlsecure/forgotpassword", {
       method: "POST",
       credentials: "include",
       headers: { "Content-type": "application/json" },

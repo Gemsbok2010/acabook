@@ -17,7 +17,7 @@ const Login = () => {
   const [isloaded, setIsloaded] = useState(false);
 
   const googleUrlAddress =
-    process.env.BACKEND_URL + `auth/google?dd=${location.pathname}`;
+    process.env.REACT_APP_BACKEND_URL + `auth/google?dd=${location.pathname}`;
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

@@ -140,7 +140,7 @@ const Aedituser = () => {
   useEffect(() => {
     // ============ PROFILE DATA ===========
     axios
-      .get(process.env.BACKEND_URL + "api/users/allusers/" + userid)
+      .get(process.env.REACT_APP_BACKEND_URL + "api/users/allusers/" + userid)
       .then((response) => {
         if (response.status === 200) {
           setUserInfo(response.data);
@@ -240,9 +240,12 @@ const Aedituser = () => {
 
   // =========== DELETE PHOTO ==================
   const deletePhoto = async (id) => {
-    await fetch(process.env.BACKEND_URL + "api/users/allusers/" + id, {
-      method: "DELETE",
-    }).then((res) => {
+    await fetch(
+      process.env.REACT_APP_BACKEND_URL + "api/users/allusers/" + id,
+      {
+        method: "DELETE",
+      }
+    ).then((res) => {
       if (res.ok === true) {
         setIdPhoto("");
       }
@@ -327,7 +330,7 @@ const Aedituser = () => {
   // ======= PUT REQUEST TO UPDATE TO AUTH.JS ======
   const onSubmit = (e) => {
     e.preventDefault();
-    fetch(process.env.BACKEND_URL + "api/users/allusers", {
+    fetch(process.env.REACT_APP_BACKEND_URL + "api/users/allusers", {
       method: "PUT",
       credentials: "include",
       headers: { "Content-type": "application/json" },
@@ -514,7 +517,7 @@ const Aedituser = () => {
           <form
             id="formZero"
             action={
-              process.env.BACKEND_URL +
+              process.env.REACT_APP_BACKEND_URL +
               `api/users/adminUpload?email=${userInfo.email}`
             }
             method="POST"

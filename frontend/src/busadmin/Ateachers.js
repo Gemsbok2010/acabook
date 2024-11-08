@@ -20,7 +20,7 @@ const Ateachers = () => {
 
   const pagePrevious = async () => {
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/admin/allteachers?page=${page <= 0 ? 0 : page - 1}` +
         "&sortBy=" +
         sort +
@@ -42,7 +42,7 @@ const Ateachers = () => {
 
   const pageNext = async () => {
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/admin/allteachers?page=${
           page < maxPage ? 1 + parseInt(page) : page
         }` +
@@ -72,7 +72,7 @@ const Ateachers = () => {
 
   const IntermediateButtons = async (id) => {
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/admin/allteachers?page=${id + 1}` +
         "&location=" +
         location +
@@ -100,7 +100,7 @@ const Ateachers = () => {
     setReload(false);
     if (ascDesc === false) {
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/admin/allteachers?sortBy=asc" +
           "&location=" +
           location +
@@ -119,7 +119,7 @@ const Ateachers = () => {
     if (ascDesc === true) {
       setReload(false);
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/admin/allteachers?sortBy=desc" +
           "&location=" +
           location +
@@ -213,7 +213,7 @@ const Ateachers = () => {
     const fetchData = async () => {
       setReload(false);
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/admin/allteachers?" +
           "location=" +
           location +
@@ -280,7 +280,7 @@ const Ateachers = () => {
     const fetchData = async () => {
       setReload(false);
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/admin/allteachers?" +
           "location=" +
           location +
@@ -323,7 +323,10 @@ const Ateachers = () => {
 
     setBackdrop(true);
     const res = await fetch(
-      process.env.BACKEND_URL + `api/admin/hideme/${id}` + "?sortBy=" + sort,
+      process.env.REACT_APP_BACKEND_URL +
+        `api/admin/hideme/${id}` +
+        "?sortBy=" +
+        sort,
       {
         method: "PUT",
         credentials: "include",
@@ -346,7 +349,10 @@ const Ateachers = () => {
     e.preventDefault();
     setBackdrop(true);
     const res = await fetch(
-      process.env.BACKEND_URL + `api/admin/hideme/${id}` + "?sortBy=" + sort,
+      process.env.REACT_APP_BACKEND_URL +
+        `api/admin/hideme/${id}` +
+        "?sortBy=" +
+        sort,
       {
         method: "PUT",
         credentials: "include",
@@ -1135,7 +1141,7 @@ const Ateachers = () => {
                               <ExternalLink
                                 target="_blank"
                                 href={
-                                  process.env.BACKEND_URL +
+                                  process.env.REACT_APP_BACKEND_URL +
                                   `api/admin/teacherProfile/${teacher.teacherId}`
                                 }
                               >

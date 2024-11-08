@@ -87,7 +87,9 @@ const Resume = () => {
     // declare the data fetching function
     const fetchData = async () => {
       const res = await fetch(
-        process.env.BACKEND_URL + "api/courses/resume?nanoId=" + user.nanoId
+        process.env.REACT_APP_BACKEND_URL +
+          "api/courses/resume?nanoId=" +
+          user.nanoId
       );
       const data = await res.json();
       setListofCourses(data.courses);

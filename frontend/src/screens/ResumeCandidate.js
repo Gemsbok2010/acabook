@@ -26,7 +26,9 @@ const Resume = () => {
   useEffect(() => {
     // ============ PROFILE DATA ===========
     axios
-      .get(process.env.BACKEND_URL + "api/teachers/candidate/" + nanoId)
+      .get(
+        process.env.REACT_APP_BACKEND_URL + "api/teachers/candidate/" + nanoId
+      )
       .then((response) => {
         if (response.status === 200) {
           setUserInfo(response.data);

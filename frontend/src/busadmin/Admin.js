@@ -23,7 +23,7 @@ const Admin = () => {
   // ========== POST ================
   const onSubmit = async (e) => {
     e.preventDefault();
-    fetch(process.env.BACKEND_URL + "api/admin/login", {
+    fetch(process.env.REACT_APP_BACKEND_URL + "api/admin/login", {
       method: "POST",
       credentials: "include",
       headers: { "Content-type": "application/json" },

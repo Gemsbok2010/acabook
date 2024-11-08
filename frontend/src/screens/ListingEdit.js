@@ -243,12 +243,15 @@ const ListingEdit = () => {
 
   const onDelete = async (e) => {
     e.preventDefault();
-    await fetch(process.env.BACKEND_URL + "api/listings/delete/" + list.slug, {
-      method: "PUT",
-      credentials: "include",
-      headers: { "Content-type": "application/json" },
-      body: JSON.stringify({ isDeletedJob: true, isTeacherJob: true }),
-    }).then((res) => {
+    await fetch(
+      process.env.REACT_APP_BACKEND_URL + "api/listings/delete/" + list.slug,
+      {
+        method: "PUT",
+        credentials: "include",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify({ isDeletedJob: true, isTeacherJob: true }),
+      }
+    ).then((res) => {
       if (res.ok === true) {
         navigate("/listingManager");
       }
@@ -274,7 +277,7 @@ const ListingEdit = () => {
     const firstName = user.firstName;
     const lastName = user.lastName;
     const nanoId = localStorage.getItem("nanoId");
-    fetch(process.env.BACKEND_URL + "api/listings/edit", {
+    fetch(process.env.REACT_APP_BACKEND_URL + "api/listings/edit", {
       method: "PUT",
       credentials: "include",
       headers: { "Content-type": "application/json" },
@@ -339,7 +342,9 @@ const ListingEdit = () => {
   useEffect(() => {
     // ============ LISTINGS DATA ===========
     axios
-      .get(process.env.BACKEND_URL + "api/listings/Ad_details/" + slug)
+      .get(
+        process.env.REACT_APP_BACKEND_URL + "api/listings/Ad_details/" + slug
+      )
       .then((response) => {
         if (response.status === 200) {
           setList(response.data);

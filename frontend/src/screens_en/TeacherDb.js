@@ -20,7 +20,7 @@ const TeacherDb = () => {
 
   const pagePrevious = async () => {
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/intlteachers/database?page=${page <= 0 ? 0 : page - 1}` +
         "&sortBy=" +
         sort +
@@ -51,7 +51,7 @@ const TeacherDb = () => {
 
   const pageNext = async () => {
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/intlteachers/database?page=${
           page < maxPage ? 1 + parseInt(page) : page
         }` +
@@ -90,7 +90,7 @@ const TeacherDb = () => {
 
   const IntermediateButtons = async (id) => {
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/intlteachers/database?page=${id + 1}` +
         "&language=" +
         language +
@@ -125,7 +125,7 @@ const TeacherDb = () => {
   const sorting = async (ascDesc) => {
     if (ascDesc === false) {
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/intlteachers/database?sortBy=asc" +
           "&language=" +
           language +
@@ -153,7 +153,7 @@ const TeacherDb = () => {
 
     if (ascDesc === true) {
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/intlteachers/database?sortBy=desc" +
           "&language=" +
           language +
@@ -359,7 +359,7 @@ const TeacherDb = () => {
     // declare the data fetching function
     const fetchData = async () => {
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/intlteachers/database?" +
           "language=" +
           language +
@@ -420,7 +420,7 @@ const TeacherDb = () => {
     // declare the data fetching function
     const fetchData = async () => {
       const res = await fetch(
-        process.env.BACKEND_URL + "api/intlteachers/listOfCourses"
+        process.env.REACT_APP_BACKEND_URL + "api/intlteachers/listOfCourses"
       );
       const data = await res.json();
       console.log(data.courses);
@@ -1053,7 +1053,7 @@ const TeacherDb = () => {
                       <ExternalLink
                         target="_blank"
                         href={
-                          process.env.BACKEND_URL +
+                          process.env.REACT_APP_BACKEND_URL +
                           `api/intlteachers/resumeCandidate/${teacher.nanoId}/${teacher.slugId}`
                         }
                       >

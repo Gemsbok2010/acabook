@@ -26,7 +26,11 @@ const Resume = () => {
   useEffect(() => {
     // ============ PROFILE DATA ===========
     axios
-      .get(process.env.BACKEND_URL + "api/intlteachers/candidate/" + nanoId)
+      .get(
+        process.env.REACT_APP_BACKEND_URL +
+          "api/intlteachers/candidate/" +
+          nanoId
+      )
       .then((response) => {
         if (response.status === 200) {
           setUserInfo(response.data);
@@ -56,7 +60,9 @@ const Resume = () => {
     // declare the data fetching function
     const fetchData = async () => {
       const res = await fetch(
-        process.env.BACKEND_URL + "api/courses/resume?nanoId=" + nanoId
+        process.env.REACT_APP_BACKEND_URL +
+          +"api/courses/resume?nanoId=" +
+          nanoId
       );
       const data = await res.json();
       setListofCourses(data.courses);

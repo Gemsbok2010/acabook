@@ -20,7 +20,7 @@ const Alistings = () => {
 
   const pagePrevious = async () => {
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/admin/listings?page=${page <= 0 ? 0 : page - 1}` +
         "&sortBy=" +
         sort +
@@ -42,7 +42,7 @@ const Alistings = () => {
 
   const pageNext = async () => {
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/admin/listings?page=${
           page < maxPage ? 1 + parseInt(page) : page
         }` +
@@ -72,7 +72,7 @@ const Alistings = () => {
 
   const IntermediateButtons = async (id) => {
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/admin/listings?page=${id + 1}` +
         "&location=" +
         location +
@@ -100,7 +100,7 @@ const Alistings = () => {
     setReload(false);
     if (ascDesc === false) {
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/admin/listings?sortBy=asc" +
           "&location=" +
           location +
@@ -121,7 +121,7 @@ const Alistings = () => {
     if (ascDesc === true) {
       setReload(false);
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/admin/listings?sortBy=desc" +
           "&location=" +
           location +
@@ -249,7 +249,7 @@ const Alistings = () => {
     const fetchData = async () => {
       setReload(false);
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/admin/listings?" +
           "location=" +
           location +
@@ -315,7 +315,7 @@ const Alistings = () => {
     e.preventDefault();
     setBackdrop(true);
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/admin/sleepAd/${slug}/?sortBy=` +
         sort +
         "&page=" +
@@ -342,7 +342,7 @@ const Alistings = () => {
     e.preventDefault();
     setBackdrop(true);
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/admin/sleepAd/${slug}/?sortBy=` +
         sort +
         "&page=" +
@@ -374,7 +374,7 @@ const Alistings = () => {
     const fetchData = async () => {
       setReload(false);
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/admin/listings?" +
           "location=" +
           location +
@@ -1246,7 +1246,7 @@ const Alistings = () => {
                             <div>
                               <ExternalLink
                                 href={
-                                  process.env.BACKEND_URL +
+                                  process.env.REACT_APP_BACKEND_URL +
                                   `api/listings/adPosts/${list.slug}`
                                 }
                                 target="_blank"

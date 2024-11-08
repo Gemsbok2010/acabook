@@ -21,7 +21,7 @@ const ApplicationsManager = () => {
 
   const pagePrevious = async () => {
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/applications/applicationsmanager?page=${
           page <= 0 ? 0 : page - 1
         }` +
@@ -52,7 +52,7 @@ const ApplicationsManager = () => {
 
   const pageNext = async () => {
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/applications/applicationsmanager?page=${
           page < maxPage ? 1 + parseInt(page) : page
         }` +
@@ -89,7 +89,7 @@ const ApplicationsManager = () => {
 
   const IntermediateButtons = async (id) => {
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/applications/applicationsmanager?page=${id + 1}` +
         "&contract=" +
         contract +
@@ -125,7 +125,7 @@ const ApplicationsManager = () => {
     setReload(false);
     if (ascDesc === false) {
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/applications/applicationsmanager?sortBy=asc" +
           "&contract=" +
           contract +
@@ -155,7 +155,7 @@ const ApplicationsManager = () => {
     if (ascDesc === true) {
       setReload(false);
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/applications/applicationsmanager?sortBy=desc" +
           "&contract=" +
           contract +
@@ -344,7 +344,7 @@ const ApplicationsManager = () => {
     const fetchData = async () => {
       setReload(false);
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/applications/applicationsmanager?" +
           "contract=" +
           contract +
@@ -394,7 +394,7 @@ const ApplicationsManager = () => {
     ReactSession.set("slug", slug);
     setReload(false);
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/applications/myapplications/${slug}?sortBy=` +
         sort +
         "&contract=" +
@@ -422,7 +422,8 @@ const ApplicationsManager = () => {
     e.preventDefault();
 
     const res = await fetch(
-      process.env.BACKEND_URL +`api/applications/withdraw/${slugId}/${nanoId}?`,
+      process.env.REACT_APP_BACKEND_URL +
+        `api/applications/withdraw/${slugId}/${nanoId}?`,
       {
         method: "DELETE",
       }
@@ -1013,7 +1014,7 @@ const ApplicationsManager = () => {
                             )}
                             <ExternalLink
                               href={
-                                process.env.BACKEND_URL +
+                                process.env.REACT_APP_BACKEND_URL +
                                 `api/listings/adPosts/${listing.slug}`
                               }
                               target="_blank"
@@ -1114,7 +1115,7 @@ const ApplicationsManager = () => {
                             <ExternalLink
                               target="_blank"
                               href={
-                                process.env.BACKEND_URL +
+                                process.env.REACT_APP_BACKEND_URL +
                                 `api/teachers/resumeCandidate/${candidate.nanoId}/${candidate.slug}`
                               }
                             >

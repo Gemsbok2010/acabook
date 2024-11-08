@@ -56,7 +56,7 @@ const Resetpassword = () => {
     e.preventDefault();
     try {
       fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           `api/secure/resetpassword/${identity}/${token}`,
         {
           method: "PUT",

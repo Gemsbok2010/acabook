@@ -1090,7 +1090,7 @@ const ListingManager = () => {
                         <div className="leftmessage">
                           <ExternalLink
                             href={
-                              process.env.BACKEND_URL +
+                              process.env.REACT_APP_BACKEND_URL +
                               `api/intllistings/edit/${listing.slug}`
                             }
                           >
@@ -1099,7 +1099,7 @@ const ListingManager = () => {
 
                           <ExternalLink
                             href={
-                              process.env.BACKEND_URL +
+                              process.env.REACT_APP_BACKEND_URL +
                               `api/intllistings/adPosts/${listing.slug}`
                             }
                             target="_blank"

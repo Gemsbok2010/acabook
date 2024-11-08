@@ -20,7 +20,7 @@ const Asubjects = () => {
 
   const pagePrevious = async () => {
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/admin/subjects?page=${page <= 0 ? 0 : page - 1}` +
         "&sortBy=" +
         sort
@@ -40,7 +40,7 @@ const Asubjects = () => {
 
   const pageNext = async () => {
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/admin/subjects?page=${
           page < maxPage ? 1 + parseInt(page) : page
         }` +
@@ -68,7 +68,7 @@ const Asubjects = () => {
 
   const IntermediateButtons = async (id) => {
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/admin/subjects?page=${id + 1}` +
         "&sortBy=" +
         sort
@@ -89,7 +89,7 @@ const Asubjects = () => {
   const sortContractType = async (ascDesc) => {
     if (ascDesc === false) {
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/admin/contractType?sortBy=asc" +
           "&contract=" +
           contract +
@@ -106,7 +106,7 @@ const Asubjects = () => {
 
     if (ascDesc === true) {
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/admin/contractType?sortBy=desc" +
           "&contract=" +
           contract +
@@ -126,7 +126,7 @@ const Asubjects = () => {
   const sortNames = async (ascDesc) => {
     if (ascDesc === false) {
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/admin/sortnames?sortBy=asc" +
           "&contract=" +
           contract +
@@ -143,7 +143,7 @@ const Asubjects = () => {
 
     if (ascDesc === true) {
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/admin/sortnames?sortBy=desc" +
           "&contract=" +
           contract +
@@ -163,7 +163,7 @@ const Asubjects = () => {
   const sortNamesEng = async (ascDesc) => {
     if (ascDesc === false) {
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/admin/sortnames_en?sortBy=asc" +
           "&contract=" +
           contract +
@@ -180,7 +180,7 @@ const Asubjects = () => {
 
     if (ascDesc === true) {
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/admin/sortnames_en?sortBy=desc" +
           "&contract=" +
           contract +
@@ -205,7 +205,7 @@ const Asubjects = () => {
     setReload(false);
     if (ascDesc === false) {
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/admin/subjects?sortBy=asc" +
           "&contract=" +
           contract +
@@ -224,7 +224,7 @@ const Asubjects = () => {
     if (ascDesc === true) {
       setReload(false);
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/admin/subjects?sortBy=desc" +
           "&contract=" +
           contract +
@@ -289,7 +289,7 @@ const Asubjects = () => {
     const fetchData = async () => {
       setReload(false);
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/admin/subjects?" +
           "contract=" +
           contract +
@@ -355,7 +355,7 @@ const Asubjects = () => {
 
     setBackdrop(true);
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/admin/hideSubject/${id}` +
         "?sortBy=" +
         sort,
@@ -381,7 +381,7 @@ const Asubjects = () => {
     e.preventDefault();
     setBackdrop(true);
     const res = await fetch(
-      process.env.BACKEND_URL +
+      process.env.REACT_APP_BACKEND_URL +
         `api/admin/hideSubject/${id}` +
         "?sortBy=" +
         sort,
@@ -437,7 +437,10 @@ const Asubjects = () => {
     setBackdrop(true);
     try {
       const res = await fetch(
-        process.env.BACKEND_URL + `api/admin/subject` + "?sortBy=" + sort,
+        process.env.REACT_APP_BACKEND_URL +
+          `api/admin/subject` +
+          "?sortBy=" +
+          sort,
         {
           method: "POST",
           credentials: "include",
@@ -488,7 +491,7 @@ const Asubjects = () => {
     e.preventDefault();
     setBackdrop(true);
     const res = await fetch(
-      process.env.BACKEND_URL + `api/admin/deleteSubject/${id}?`,
+      process.env.REACT_APP_BACKEND_URL + `api/admin/deleteSubject/${id}?`,
       {
         method: "DELETE",
       }
@@ -512,7 +515,7 @@ const Asubjects = () => {
     const fetchData = async () => {
       setReload(false);
       const res = await fetch(
-        process.env.BACKEND_URL +
+        process.env.REACT_APP_BACKEND_URL +
           "api/admin/subjects?sortBy=" +
           sort +
           "&page=" +

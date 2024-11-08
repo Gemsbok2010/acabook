@@ -24,7 +24,7 @@ const Signup = () => {
   const [password, setPassword] = useState("");
 
   const googleUrlAddress =
-    process.env.BACKEND_URL + `auth/google?dd=${location.pathname}`;
+    process.env.REACT_APP_BACKEND_URL + `auth/google?dd=${location.pathname}`;
 
   const [tickBox, setTickBox] = useState(false);
   const [vanishfirst, setVanishfirst] = useState(false);

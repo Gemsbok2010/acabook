@@ -34,7 +34,7 @@ const Contact = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     setIsloaded(true);
-    fetch(process.env.BACKEND_URL +"api/intlsecure/sendmail", {
+    fetch(process.env.REACT_APP_BACKEND_URL + "api/intlsecure/sendmail", {
       method: "POST",
       credentials: "include",
       headers: { "Content-type": "application/json" },
