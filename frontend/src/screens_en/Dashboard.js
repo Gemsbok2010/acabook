@@ -4,9 +4,9 @@ import Footer from "../components_en/Footer";
 import { useState, useEffect } from "react";
 import { ReactSession } from "react-client-session";
 import axios from "axios";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { login } from "../redux/userInfo";
+import { ExternalLink } from "react-external-link";
 
 // Three dots
 import { ThreeDots } from "react-loader-spinner";
@@ -483,12 +483,10 @@ const Dashboard = () => {
                     <span className="material-icons-sharp">settings</span>
                     <h4>Security Settings</h4>
                   </Link>
-                  <Link to="/invoices/en">
-                    <span className="material-symbols-outlined">
-                      fact_check
-                    </span>
-                    <h4>Invoices</h4>
-                  </Link>
+                  <ExternalLink href="/logout" target="_self">
+                    <span className="material-icons-sharp">logout</span>
+                    <h4>Log Out</h4>
+                  </ExternalLink>
                 </div>
               ) : (
                 <div className="sidebar">
@@ -612,12 +610,10 @@ const Dashboard = () => {
                     <span className="material-icons-sharp">settings</span>
                     <h4>Security Settings</h4>
                   </Link>
-                  <Link to="/invoices/en">
-                    <span className="material-symbols-outlined">
-                      fact_check
-                    </span>
-                    <h4>Invoices</h4>
-                  </Link>
+                  <ExternalLink href="/logout" target="_self">
+                    <span className="material-icons-sharp">logout</span>
+                    <h4>Log Out</h4>
+                  </ExternalLink>
                 </div>
               )}
               {/* END OF SIDEBAR */}

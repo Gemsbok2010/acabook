@@ -38,6 +38,7 @@ const Login = lazy(() => import("./screens/Login"));
 const Logout = lazy(() => import("./screens/Logout"));
 const Signup = lazy(() => import("./screens/Signup"));
 const Dashboard = lazy(() => import("./screens/Dashboard"));
+const Calendar = lazy(() => import("./screens/Calendar"));
 const PersonalDetails = lazy(() => import("./screens/PersonalDetails"));
 const Question1 = lazy(() => import("./screens/Question1"));
 const Question2primary = lazy(() => import("./screens/Question2primary"));
@@ -278,7 +279,7 @@ function App() {
               {/* 4. BLOCK INCOMPLETE USERS */}
               <Route element={<ProtectedAllusers />}>
                 {/* 5. BLOCK BLACKLISTED USERS */}
-
+                <Route path="/calendar" element={<Calendar />} />
                 <Route path="/question1" element={<Question1 />} />
                 <Route
                   path="/question_continue"
@@ -366,7 +367,6 @@ function App() {
             </Route>
           </Route>
           {/* 2. BLOCK MANDARIN LANGUAGE VERSION */}
-          <Route path="/calendar/en" element={<Calendar_en />} />
           <Route element={<ProtectedTaal />}>
             <Route path="/contact/en" element={<Contact_en />} />
             <Route
@@ -398,7 +398,6 @@ function App() {
               />
 
               {/* 4. BLOCK BLACKLISTED USERS */}
-
               <Route
                 path="/personal-details/en"
                 element={<PersonalDetails_en />}
@@ -407,7 +406,7 @@ function App() {
               {/* 4. BLOCK INCOMPLETE USERS */}
               <Route element={<ProtectedAllusersEn />}>
                 {/* 5. BLOCK BLACKLISTED USERS */}
-
+                <Route path="/calendar/en" element={<Calendar_en />} />
                 <Route
                   path="/listingManager/en"
                   element={<ListingManager_en />}

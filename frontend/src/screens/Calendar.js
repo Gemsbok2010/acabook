@@ -1,8 +1,8 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import LoggedInNavbar from "../components_en/LoggedInNavbar";
-import Footer from "../components_en/Footer";
+import LoggedInNavbar from "../components/LoggedInNavbar";
+import Footer from "../components/Footer";
 
 const Calendar = () => {
   const user = useSelector((state) => state.userInfo.value);
@@ -118,7 +118,7 @@ const Calendar = () => {
     };
   }, []);
 
-  // ============= GET DISPLAY PANEL AFTER CLICK ON START ===============
+  // ===== GET DISPLAY PANEL AFTER CLICK ON START =============
   const [showInfo, setShowInfo] = useState(false);
   const [thisId, setThisId] = useState("");
   const [available_start, setAvailable_start] = useState("");
@@ -179,7 +179,7 @@ const Calendar = () => {
           <div id="container">
             <div id="header">
               <div id="monthDisplay">
-                {dt.toLocaleDateString("en-au", {
+                {dt.toLocaleDateString("zh-tw", {
                   month: "long",
                 })}{" "}
                 {year}
@@ -204,13 +204,13 @@ const Calendar = () => {
               </div>
             </div>
             <div id="weekdays">
-              <div>Sun</div>
-              <div>Mon</div>
-              <div>Tue</div>
-              <div>Wed</div>
-              <div>Thu</div>
-              <div>Fri</div>
-              <div>Sat</div>
+              <div>星期日</div>
+              <div>星期一</div>
+              <div>星期二</div>
+              <div>星期三</div>
+              <div>星期四</div>
+              <div>星期五</div>
+              <div>星期六</div>
             </div>
             <div id="calendar">
               {squares.map((square) => {
@@ -244,7 +244,7 @@ const Calendar = () => {
                             paddingDays +
                             " " +
                             dt
-                              .toLocaleDateString("en-au", {
+                              .toLocaleDateString("zh-tw", {
                                 month: "long",
                               })
                               .substring(0, 3) +

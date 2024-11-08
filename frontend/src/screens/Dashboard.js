@@ -7,6 +7,7 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { login } from "../redux/userInfo";
+import { ExternalLink } from "react-external-link";
 
 // Three dots
 import { ThreeDots } from "react-loader-spinner";
@@ -469,12 +470,10 @@ const Dashboard = () => {
                     <span className="material-icons-sharp">settings</span>
                     <h4>安全設定</h4>
                   </Link>
-                  <Link to="/invoices">
-                    <span className="material-symbols-outlined">
-                      fact_check
-                    </span>
-                    <h4>收據</h4>
-                  </Link>
+                  <ExternalLink href="/logout" target="_self">
+                    <span className="material-icons-sharp">logout</span>
+                    <h4>登出</h4>
+                  </ExternalLink>
                 </div>
               ) : (
                 <div className="sidebar">
@@ -600,12 +599,10 @@ const Dashboard = () => {
                     <span className="material-icons-sharp">settings</span>
                     <h4>安全設定</h4>
                   </Link>
-                  <Link to="/invoices">
-                    <span className="material-symbols-outlined">
-                      fact_check
-                    </span>
-                    <h4>收據</h4>
-                  </Link>
+                  <ExternalLink href="/logout" target="_self">
+                    <span className="material-icons-sharp">logout</span>
+                    <h4>登出</h4>
+                  </ExternalLink>
                 </div>
               )}
               {/* END OF SIDEBAR */}

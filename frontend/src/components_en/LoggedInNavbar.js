@@ -164,12 +164,6 @@ const LoggedInNavbar = () => {
                 <div>
                   <Link to="/securitySettings/en">Security Settings</Link>
                 </div>
-                <div>
-                  <Link to="/invoices/en">Invoices</Link>
-                </div>
-                {/* <div>
-                <Link to="/subscription">訂閱選項</Link>
-              </div> */}
 
                 <div>
                   <ExternalLink href="/logout_en" target="_self">

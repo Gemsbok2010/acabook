@@ -158,9 +158,7 @@ const LoggedInNavbar = () => {
                 <div>
                   <Link to="/securitySettings">安全設定</Link>
                 </div>
-                <div>
-                  <Link to="/invoices">收據</Link>
-                </div>
+
                 <div>
                   <ExternalLink href="/logout" target="_self">
                     登出
