@@ -187,7 +187,7 @@ const QuestionContinue = () => {
             -ms-flex-align: center;
             align-items: center;
             min-height: 100vh;
-            background: #a5ce0f;
+            background: #121313;
           }
 
           .wrap .questionCard {

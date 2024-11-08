@@ -186,10 +186,7 @@ const QuestionContinue = () => {
             -ms-flex-align: center;
             align-items: center;
             min-height: 100vh;
-            background-image: url("./../../images/languages.jpg");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
+            background: #121313;
           }
 
           .wrap .questionCard {
