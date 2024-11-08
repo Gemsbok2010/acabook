@@ -21,8 +21,8 @@ const Aeditteacher = lazy(() => import("./busadmin/Aeditteacher"));
 const Aeditteachercv = lazy(() => import("./busadmin/Aeditteachercv"));
 const Alogout = lazy(() => import("./busadmin/Alogout"));
 const Aforgotpassword = lazy(() => import("./busadmin/Aforgotpassword"));
-const AemailMessage = lazy(() => import("./busadmin/AemailMessage"));
 const Aresume = lazy(() => import("./busadmin/Aresume"));
+const AemailMessage = lazy(() => import("./busadmin/AemailMessage"));
 
 //Screens
 const Home = lazy(() => import("./screens/Home"));
@@ -207,22 +207,22 @@ function App() {
 
           <Route path="/admin" element={<Admin />} />
           {/* ADMIN LOGGED IN */}
-          {/* <Route element={<ProtectedAdmin />}> */}
-          <Route path="/admin/dashboard" element={<Adashboard />} />
-          <Route path="/message" element={<Amessage />} />
-          <Route path="/admin/users" element={<Ausers />} />
-          <Route path="/admin/listings" element={<Alistings />} />
-          <Route path="/admin/teachers" element={<Ateachers />} />
-          <Route path="/admin/security" element={<Asecurity />} />
-          <Route path="/admin/subjects" element={<Asubjects />} />
-          <Route path="/adminusers/:email" element={<Aedituser />} />
-          <Route path="/adminteacher/:teacherId" element={<Aeditteacher />} />
-          <Route
-            path="/adminteachercv/:teacherId"
-            element={<Aeditteachercv />}
-          />
-          <Route path="/adminresume/:teacherId" element={<Aresume />} />
-          {/* </Route> */}
+          <Route element={<ProtectedAdmin />}>
+            <Route path="/admin/dashboard" element={<Adashboard />} />
+            <Route path="/message" element={<Amessage />} />
+            <Route path="/admin/users" element={<Ausers />} />
+            <Route path="/admin/listings" element={<Alistings />} />
+            <Route path="/admin/teachers" element={<Ateachers />} />
+            <Route path="/admin/security" element={<Asecurity />} />
+            <Route path="/admin/subjects" element={<Asubjects />} />
+            <Route path="/adminusers/:email" element={<Aedituser />} />
+            <Route path="/adminteacher/:teacherId" element={<Aeditteacher />} />
+            <Route
+              path="/adminteachercv/:teacherId"
+              element={<Aeditteachercv />}
+            />
+            <Route path="/adminresume/:teacherId" element={<Aresume />} />
+          </Route>
 
           {/* 1. USER NOT LOGGED IN */}
           <Route path="/question9/en" element={<Question9_en />} />
