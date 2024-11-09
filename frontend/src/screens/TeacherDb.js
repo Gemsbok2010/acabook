@@ -1020,7 +1020,7 @@ const TeacherDb = () => {
             <section>
               <div className="tilesGrid">
                 {teachers.map((teacher) => {
-                  console.log(teacher);
+           
                   return (
                     <div className="tiles" key={teacher._id}>
                       <ExternalLink

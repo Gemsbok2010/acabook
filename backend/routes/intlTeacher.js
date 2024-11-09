@@ -224,7 +224,7 @@ router.get("/candidate/:nanoId", async (req, res) => {
 
 // ============== PREVIEW CV (from Resume.js) ===============
 router.get("/resume/:nanoId", async (req, res) => {
-  console.log(req.params.nanoId);
+
   const teacher = await Teacher.findOne({ nanoId: req.params.nanoId });
 
   if (teacher === null) {

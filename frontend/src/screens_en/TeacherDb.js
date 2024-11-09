@@ -422,7 +422,7 @@ const TeacherDb = () => {
         process.env.REACT_APP_BACKEND_URL + "api/intlteachers/listOfCourses"
       );
       const data = await res.json();
-      console.log(data.courses);
+
       setListofCourses(data.courses);
     };
 

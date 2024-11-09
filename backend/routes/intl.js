@@ -11,7 +11,6 @@ const { signUpInternational, loginInternational } = require("../validation");
 
 //============ SIGN UP ==============
 router.post("/signup", async (req, res) => {
-  console.log(req.query);
   try {
     //LETS VALIDATE THE DATA BEFORE
     const { error } = signUpInternational(req.body);

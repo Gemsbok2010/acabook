@@ -271,7 +271,6 @@ router.get("/listingmanager", async (req, res) => {
       sort = -1;
     }
 
-    console.log(req.query, "here");
 
     const email = req.query.email;
     let match = { email: email, isDeletedJob: false };
@@ -347,7 +346,7 @@ router.get("/listingmanager", async (req, res) => {
         isRejected: false,
       });
 
-      console.log(newApplicants);
+   
 
       res.status(200).json({
         adPosts: adPosts,

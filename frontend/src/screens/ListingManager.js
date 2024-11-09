@@ -476,7 +476,7 @@ const ListingManager = () => {
           ReactSession.get("slug")
       );
       const data = await res.json();
-      console.log(data);
+   
       if (isCancelled === false) {
         window.scrollTo({
           top: 0,

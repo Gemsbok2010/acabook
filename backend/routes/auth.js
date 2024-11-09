@@ -63,7 +63,7 @@ router.post("/signup", async (req, res) => {
 //=================== EMAIL LOGIN ================
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
-  console.log(req.body, "here");
+ 
   // Check email if already exist in database
   const user = await User.findOne({ email });
   if (!user) {

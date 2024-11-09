@@ -437,7 +437,6 @@ router.put("/sleepAd/:slug", async (req, res) => {
 // Candidates Slug Number (from ListingManager.js)
 router.get("/candidates", async (req, res) => {
   Listing.paginate({}, {}).then(async (result) => {
-    console.log(req.query, "here");
     let sort = req.query.sortBy;
     if (sort === undefined || sort === "") {
       sort = -1;

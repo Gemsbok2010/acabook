@@ -102,7 +102,6 @@ router.get("/dashboard/:email", async (req, res) => {
       email: req.params.email,
     }).countDocuments();
 
-    console.log(total);
 
     res.status(200).json({
       user: user,
